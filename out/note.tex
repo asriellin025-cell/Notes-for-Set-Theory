@@ -1,0 +1,72 @@
+\documentclass[12pt, a4paper, oneside]{article}
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    top=2.5cm,
+    bottom=2.5cm,
+    left=2.5cm,
+    right=2.5cm
+}
+\usepackage{amsmath}    
+\usepackage{amssymb}    
+\usepackage{amsfonts}   
+\usepackage{amsthm}     
+\usepackage{mathtools}  
+\usepackage{bm}         
+\usepackage{mathrsfs}
+
+\title{\textbf{Notes}}
+\author{Lin}
+\date{\today}
+\begin{document}
+    \maketitle
+    \newpage
+    \newtheorem{defn}{Definition}[section]
+\theoremstyle{plain}
+\newtheorem{thm}[defn]{Theorem}
+
+    $B\subseteq C \implies \mathscr{P}(B) \subseteq \mathscr{P}(C) $
+    \begin{proof}
+
+        By def $\mathscr{P}(B) = \left\{ x \mid x \subseteq B \right\}$
+
+        $\forall x, x \in \mathscr{P}(B)$, Then, $x \subseteq B \subseteq C$
+
+        $\implies x, x \subseteq C$
+    
+        $\implies x \in \mathscr{P}(C)$ By def $\mathscr{P} C = \left\{ x \mid x \subseteq C \right\}$
+
+        Thus, $\mathscr{P}(B) \subseteq \mathscr{P}(C)$
+
+    \end{proof}
+
+    A is a finite set,$|A|=n \implies |\mathscr{P}(A)| = 2^n$
+    \begin{proof}
+        
+        Consider taking $i$ elements from A to build a subset.
+
+        Then $i \in \left\{ 0, \dots, n\right\}$, and the number of that kind of subsets is $\binom{n}{i}$.
+
+        (if $i = 0$, the subset is $\emptyset$; if $i = n$, the subset is A itself)
+
+        $\implies |\mathscr{P}(A)| = \sum_{i = 0}^{n}\binom{n}{i}$
+
+        $\implies |\mathscr{P}(A)| = 2^n$
+
+    \end{proof}
+
+    $x, y \in B \implies \left\{ \left\{ x\right\},\left\{x, y\right\} \right\} 
+    \in \mathscr{P}(\mathscr{P}(B))$
+    \begin{proof}
+        $x, y \in B$
+
+        $\implies \left\{x\right\}, \left\{ x, y\right\} \in \mathscr{P}(B)$
+
+        $\implies \left\{\left\{x\right\}, \left\{x, y\right\}\right\} \subseteq \mathscr{P}(B)$
+
+        Thus, by def $\left\{\left\{x\right\}, \left\{x, y\right\}\right\} \in \mathscr{P}(\mathscr{P}(B))$
+    \end{proof}
+
+
+\end{document}
+
