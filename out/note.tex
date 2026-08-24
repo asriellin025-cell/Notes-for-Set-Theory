@@ -15,13 +15,16 @@
 \usepackage{bm}         
 \usepackage{mathrsfs}
 
-\title{\textbf{Notes}}
+\title{\textbf{Notes  \\ Mainly to Elements of Set Theory}}
 \author{Lin}
 \date{\today}
+
+
 \begin{document}
     \maketitle
     \newpage
     \newtheorem{defn}{Definition}[section]
+    \newtheorem{remark}{Remark}
 \theoremstyle{plain}
 \newtheorem{thm}[defn]{Theorem}
 
@@ -67,6 +70,32 @@
         Thus, by def $\left\{\left\{x\right\}, \left\{x, y\right\}\right\} \in \mathscr{P}(\mathscr{P}(B))$
     \end{proof}
 
+    \begin{remark}
+        A simple way to calculate the rank of set (which finite) is to count the deepest nested brackets until meet atom or $\emptyset$.
+    \end{remark}
 
+    $\forall \alpha \in \mathbb{N},\alpha \le 3, V_{\alpha + 1} = A \cup \mathscr{P}(V_{\alpha})$
+    \begin{proof}
+        $V_0 = A$
+
+        By def, $V_{n+1} = V_n \cup \mathscr{P}(V_n)$
+        
+        $V_1 = V_0 \cup \mathscr{P}(V_0) = A \cup \mathscr{P}(V_0)$
+
+        $V_2 = V_1 \cup \mathscr{P}(V_1) = A \cup \mathscr{P}(V_0) \cup  \mathscr{P}(V_1) = A \cup \mathscr{P}(V_1)$
+        
+        $\mathscr{P}(V_0) \cup  \mathscr{P}(V_1) =  \mathscr{P}(V_1)$,
+        By $\mathscr{P}(V0) \subseteq \mathscr{P}(V_1)$ since $V_0 \subseteq V_1$
+
+        $V_3 = V_2 \cup \mathscr{P}(V_2) = A \cup \mathscr{P}(V_1) \cup  \mathscr{P}(V_2)$ Similarly,
+
+        $V_3 = A \cup \mathscr{P}(V_2)$
+    \end{proof}
+
+    \begin{remark}
+        I guess we can use mathematical induction to make it to $\forall \alpha \in \mathbb{N}$
+    \end{remark}
+
+    
 \end{document}
 
