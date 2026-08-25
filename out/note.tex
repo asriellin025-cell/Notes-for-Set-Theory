@@ -23,10 +23,8 @@
 \begin{document}
     \maketitle
     \newpage
-    \newtheorem{defn}{Definition}[section]
     \newtheorem{remark}{Remark}
 \theoremstyle{plain}
-\newtheorem{thm}[defn]{Theorem}
 
     $B\subseteq C \implies \mathscr{P}(B) \subseteq \mathscr{P}(C) $
     \begin{proof}
@@ -35,7 +33,7 @@
 
         $\forall x, x \in \mathscr{P}(B)$, Then, $x \subseteq B \subseteq C$
 
-        $\implies x, x \subseteq C$
+        $\implies x \subseteq C$
     
         $\implies x \in \mathscr{P}(C)$ By def $\mathscr{P} C = \left\{ x \mid x \subseteq C \right\}$
 
@@ -54,7 +52,7 @@
 
         $\implies |\mathscr{P}(A)| = \sum_{i = 0}^{n}\binom{n}{i}$
 
-        $\implies |\mathscr{P}(A)| = 2^n$
+        $\implies |\mathscr{P}(A)| = 2^n$, By Binomial Theorem, consider $(1+1)^n$
 
     \end{proof}
 
@@ -85,7 +83,7 @@
         $V_2 = V_1 \cup \mathscr{P}(V_1) = A \cup \mathscr{P}(V_0) \cup  \mathscr{P}(V_1) = A \cup \mathscr{P}(V_1)$
         
         $\mathscr{P}(V_0) \cup  \mathscr{P}(V_1) =  \mathscr{P}(V_1)$,
-        By $\mathscr{P}(V0) \subseteq \mathscr{P}(V_1)$ since $V_0 \subseteq V_1$
+        By $\mathscr{P}(V0) \subseteq \mathscr{P}(V_1)$ since $V_0 \subseteq V_1$, by previous result.
 
         $V_3 = V_2 \cup \mathscr{P}(V_2) = A \cup \mathscr{P}(V_1) \cup  \mathscr{P}(V_2)$ Similarly,
 
@@ -96,6 +94,6 @@
         I guess we can use mathematical induction to make it to $\forall \alpha \in \mathbb{N}$
     \end{remark}
 
-    
+
 \end{document}
 
