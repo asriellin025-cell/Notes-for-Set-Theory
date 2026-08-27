@@ -23,7 +23,8 @@
 \begin{document}
     \maketitle
     \newpage
-    \newtheorem{remark}{Remark}
+    \newtheorem*{remark}{Remark}
+    \newtheorem{axiom}{Axiom}
 \theoremstyle{plain}
 
     $B\subseteq C \implies \mathscr{P}(B) \subseteq \mathscr{P}(C) $
@@ -98,7 +99,15 @@
         All sets are classes, $\{x \mid P(x)\}$ is appropriately is class-builder, where $P(x)$ is open formula.
     \end{remark}
 
-    
+    \begin{axiom}
+        Extensionality Axiom
+        $$\forall A \forall B ,(\forall x, x \in A \iff x \in B) \implies A = B$$
+    \end{axiom}\
+
+    \begin{axiom}
+        Empty Set Axiom
+        $$\exists A \forall x, x \notin A$$
+    \end{axiom}
 
 \end{document}
 
