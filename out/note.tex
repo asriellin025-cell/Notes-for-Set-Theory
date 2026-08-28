@@ -15,7 +15,7 @@
 \usepackage{bm}         
 \usepackage{mathrsfs}
 
-\title{\textbf{Notes  \\ Mainly to Elements of Set Theory}}
+\title{\textbf{Notes  \\ Notes on Elements of Set Theory}}
 \author{Lin}
 \date{\today}
 
@@ -96,19 +96,30 @@
     \end{remark}
 
     \begin{remark}
-        All sets are classes, $\{x \mid P(x)\}$ is appropriately is class-builder, where $P(x)$ is open formula.
+        All sets are classes, $\{x \mid \phi(x)\}$ is appropriately is class-builder, where $\phi(x)$ is open formula.
+    \end{remark}
+
+    \begin{remark}
+        Definition is like an abbreviation of syntax,
+        
+        and it seems that it must be iff statements.
+    \end{remark}
+
+    \begin{remark}
+        $\forall x (x\in B \iff \phi(x))  \iff B = \{x\mid \phi(x)\}$
     \end{remark}
 
     \begin{axiom}
         Extensionality Axiom
         $$\forall A \forall B ,(\forall x, x \in A \iff x \in B) \implies A = B$$
-    \end{axiom}\
+    \end{axiom}
 
     \begin{axiom}
         Empty Set Axiom
         $$\exists A \forall x, x \notin A$$
         \begin{remark}
             Does $\emptyset$ act like a unique generator in terms of abstract algebra?
+
              (e.g. similar as prime numbers can be used to generate whole $\mathbb{N}$ under multiplication)
         \end{remark}
     \end{axiom}
@@ -129,6 +140,14 @@
 
     \begin{axiom}
         Subset Axiom
+        $$\forall t_1 \dots \forall t_n \forall c \exists B \forall x(x\in B \iff x \in c \wedge \phi(x,t_1,\dots,t_n))$$
+        \begin{remark}
+            It is an axiom schema, where $\phi$ is a first-order formula;
+            
+            The number of subset axioms would be $\aleph_0$;
+
+            $P(x)$ (predicate) includes $\phi(x)$ (open formula) and $\sigma$ (closed formula).
+        \end{remark}
     \end{axiom}
         
     \begin{axiom}
@@ -147,11 +166,9 @@
         Choice Axiom
     \end{axiom}
 
-    \begin{remark}
-        Definition is like an abbreviation of syntax, and it seems that it must be iff statements.
-    \end{remark}
     
     
+
 
 \end{document}
 
