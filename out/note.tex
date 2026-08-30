@@ -15,7 +15,7 @@
 \usepackage{bm}         
 \usepackage{mathrsfs}
 
-\title{\textbf{Notes  \\ Notes on Elements of Set Theory}}
+\title{\textbf{Notes on Elements of Set Theory}}
 \author{Lin}
 \date{\today}
 
@@ -25,9 +25,14 @@
     \newpage
     \newtheorem*{remark}{Remark}
     \newtheorem{axiom}{Axiom}
+    \newtheorem{theorem}{Theorem}
 \theoremstyle{plain}
+    \begin{theorem}
 
-    $B\subseteq C \implies \mathscr{P}(B) \subseteq \mathscr{P}(C) $
+        $B\subseteq C \implies \mathscr{P}(B) \subseteq \mathscr{P}(C) $
+
+    \end{theorem}
+    
     \begin{proof}
 
         By def $\mathscr{P}(B) = \left\{ x \mid x \subseteq B \right\}$
@@ -42,7 +47,12 @@
 
     \end{proof}
 
-    A is a finite set,$|A|=n \implies |\mathscr{P}(A)| = 2^n$
+    \begin{theorem}
+        
+        A is a finite set,$|A|=n \implies |\mathscr{P}(A)| = 2^n$
+
+    \end{theorem}
+    
     \begin{proof}
         
         Consider taking $i$ elements from A to build a subset.
@@ -57,8 +67,13 @@
 
     \end{proof}
 
-    $x, y \in B \implies \left\{ \left\{ x\right\},\left\{x, y\right\} \right\} 
+    \begin{theorem}
+
+        $x, y \in B \implies \left\{ \left\{ x\right\},\left\{x, y\right\} \right\} 
     \in \mathscr{P}(\mathscr{P}(B))$
+
+    \end{theorem}
+    
     \begin{proof}
         $x, y \in B$
 
@@ -73,7 +88,12 @@
         A simple way to calculate the rank of set (which finite) is to count the deepest nested brackets until meet atom or $\emptyset$.
     \end{remark}
 
-    $\forall \alpha \in \mathbb{N},\alpha \le 3, V_{\alpha + 1} = A \cup \mathscr{P}(V_{\alpha})$
+    \begin{theorem}
+        
+        $\forall \alpha \in \mathbb{N},\alpha \le 3, V_{\alpha + 1} = A \cup \mathscr{P}(V_{\alpha})$
+
+    \end{theorem}
+    
     \begin{proof}
         $V_0 = A$
 
@@ -84,7 +104,7 @@
         $V_2 = V_1 \cup \mathscr{P}(V_1) = A \cup \mathscr{P}(V_0) \cup  \mathscr{P}(V_1) = A \cup \mathscr{P}(V_1)$
         
         $\mathscr{P}(V_0) \cup  \mathscr{P}(V_1) =  \mathscr{P}(V_1)$,
-        By $\mathscr{P}(V_0) \subseteq \mathscr{P}(V_1)$ since $V_0 \subseteq V_1$, by previous result.
+        By $\mathscr{P}(V_0) \subseteq \mathscr{P}(V_1)$ since $V_0 \subseteq V_1$, by Theorem 1.
 
         $V_3 = V_2 \cup \mathscr{P}(V_2) = A \cup \mathscr{P}(V_1) \cup  \mathscr{P}(V_2)$ Similarly,
 
@@ -163,7 +183,93 @@
             $P(x)$ (predicate) includes $\phi(x)$ (open formula) and $\sigma$ (closed formula).
         \end{remark}
     \end{axiom}
+      
+    \begin{theorem}
         
+        $x\in A \implies x \subseteq \bigcup A$
+
+    \end{theorem}
+    
+    \begin{proof}
+
+        $x \subseteq \bigcup A \iff \forall y( y \in x \implies y\in \bigcup A)$
+
+        Statement equivalent to $x\in A \implies \forall y( y \in x \implies y\in \bigcup A)$
+
+        By def $\bigcup A = \{y \mid (\exists b \in A) y\in b \}$
+
+        Notice $\exists b, b = x$
+
+    \end{proof}
+
+    \begin{theorem}
+
+        $A \subseteq B \implies \bigcup A \subseteq \bigcup B$
+
+    \end{theorem}
+    
+    \begin{proof}
+        
+        This proof includes guidance on conceptual approaches from an LLM.
+
+        $\forall x \in A, x\in B$
+
+        Then $\forall y \in \bigcup A, \exists x \in A, y \in x$
+        
+        Then $y\in x\in A$
+
+        Since $A \subseteq B$, $x\in B$
+
+        By Theorem 5, $x\in B \implies x \subseteq \bigcup B$
+
+        Then $y \in \bigcup B$
+
+    \end{proof}
+
+    \begin{theorem}
+
+        $\forall x \in A, x \subseteq B \implies \bigcup A \subseteq B$
+
+    \end{theorem}
+    
+    \begin{proof}
+
+        $\forall  y \in \bigcup A$, By def $\bigcup A = \{y\mid (\exists b \in A)y\in b\}$
+
+        $\forall x\in A, x\subseteq B$
+        
+        Then $b\subseteq B$, $y\in B$
+
+    \end{proof}
+
+    \begin{theorem}
+
+        $\forall A, \bigcup \mathscr{P}(A) = A$
+
+    \end{theorem}
+    
+    \begin{proof}
+        
+        By def $\mathscr{P}(A) = \{x \mid x \subseteq A\}$
+
+        $\bigcup \mathscr{P}(A) = \{y\mid (\exists b \in \mathscr{P}(A))y\in b\}$
+
+        $(\subseteq)$ Notice $A \in \mathscr{P}(A)$
+
+        Then $\bigcup \mathscr{P}(A) = \{y \mid y \in A\}$
+
+        $A \subseteq \bigcup \mathscr{P}(A)$
+
+        $(\supseteq)$ $\forall x \in \mathscr{P}(A), x \subseteq A$ By def
+
+        Then $\bigcup \mathscr{P}(A) \subseteq A$ By Theorem 7
+
+        Thus $\forall A, \bigcup \mathscr{P}(A) = A$
+
+
+
+    \end{proof}
+
     \begin{axiom}
         Replacement Axiom
     \end{axiom}
