@@ -7,34 +7,27 @@
     left=2.5cm,
     right=2.5cm
 }
-\usepackage{amsmath}    
-\usepackage{amssymb}    
-\usepackage{amsfonts}   
-\usepackage{amsthm}     
-\usepackage{mathtools}  
-\usepackage{bm}         
-\usepackage{mathrsfs}
+\usepackage{amsmath, amssymb, amsfonts, amsthm, mathtools, bm, mathrsfs}           
 
 \title{\textbf{Notes on Elements of Set Theory}}
 \author{Lin}
 \date{\today}
 
-
 \begin{document}
     \maketitle
     \newpage
+    \theoremstyle{plain}
     \newtheorem*{remark}{Remark}
-    \newtheorem{axiom}{Axiom}
     \newtheorem{theorem}{Theorem}
-\theoremstyle{plain}
+    \theoremstyle{definition}
+    \newtheorem{axiom}{Axiom}
+    \newtheorem{definition}{Definition}
+    
     \begin{theorem}
-
         $B\subseteq C \implies \mathscr{P}(B) \subseteq \mathscr{P}(C) $
-
     \end{theorem}
     
     \begin{proof}
-
         By def $\mathscr{P}(B) = \left\{ x \mid x \subseteq B \right\}$
 
         $\forall x, x \in \mathscr{P}(B)$, Then, $x \subseteq B \subseteq C$
@@ -44,17 +37,13 @@
         $\implies x \in \mathscr{P}(C)$ By def $\mathscr{P} (C) = \left\{ x \mid x \subseteq C \right\}$
 
         Thus, $\mathscr{P}(B) \subseteq \mathscr{P}(C)$
-
     \end{proof}
 
     \begin{theorem}
-        
         A is a finite set,$|A|=n \implies |\mathscr{P}(A)| = 2^n$
-
     \end{theorem}
     
     \begin{proof}
-        
         Consider taking $i$ elements from A to build a subset.
 
         Then $i \in \left\{ 0, \dots, n\right\}$, and the number of that kind of subsets is $\binom{n}{i}$.
@@ -64,14 +53,11 @@
         $\implies |\mathscr{P}(A)| = \sum_{i = 0}^{n}\binom{n}{i}$
 
         $\implies |\mathscr{P}(A)| = 2^n$, By Binomial Theorem, consider $(1+1)^n$
-
     \end{proof}
 
     \begin{theorem}
-
         $x, y \in B \implies \left\{ \left\{ x\right\},\left\{x, y\right\} \right\} 
-    \in \mathscr{P}(\mathscr{P}(B))$
-
+        \in \mathscr{P}(\mathscr{P}(B))$
     \end{theorem}
     
     \begin{proof}
@@ -89,9 +75,7 @@
     \end{remark}
 
     \begin{theorem}
-        
         $\forall \alpha \in \mathbb{N},\alpha \le 3, V_{\alpha + 1} = A \cup \mathscr{P}(V_{\alpha})$
-
     \end{theorem}
     
     \begin{proof}
@@ -112,7 +96,7 @@
     \end{proof}
 
     \begin{remark}
-        we can use mathematical induction to make it to $\forall \alpha \in \mathbb{N}$
+        We can use mathematical induction to make it to $\forall \alpha \in \mathbb{N}$
     \end{remark}
 
     \begin{remark}
@@ -185,13 +169,10 @@
     \end{axiom}
       
     \begin{theorem}
-        
         $x\in A \implies x \subseteq \bigcup A$
-
     \end{theorem}
     
     \begin{proof}
-
         $x \subseteq \bigcup A \iff \forall y( y \in x \implies y\in \bigcup A)$
 
         Statement equivalent to $x\in A \implies \forall y( y \in x \implies y\in \bigcup A)$
@@ -199,57 +180,45 @@
         By def $\bigcup A = \{y \mid (\exists b \in A) y\in b \}$
 
         Notice $\exists b, b = x$
-
     \end{proof}
 
     \begin{theorem}
-
         $A \subseteq B \implies \bigcup A \subseteq \bigcup B$
-
     \end{theorem}
     
     \begin{proof}
-        
         This proof includes guidance on conceptual approaches from an LLM.
 
         $\forall x \in A, x\in B$
 
         Then $\forall y \in \bigcup A, \exists x \in A, y \in x$
         
-        Then $y\in x\in A$
+        Then $y\in x \wedge x\in A$
 
         Since $A \subseteq B$, $x\in B$
 
         By Theorem 5, $x\in B \implies x \subseteq \bigcup B$
 
         Then $y \in \bigcup B$
-
     \end{proof}
 
     \begin{theorem}
-
         $\forall x \in A, x \subseteq B \implies \bigcup A \subseteq B$
-
     \end{theorem}
     
     \begin{proof}
-
         $\forall  y \in \bigcup A$, By def $\bigcup A = \{y\mid (\exists b \in A)y\in b\}$
 
         $\forall x\in A, x\subseteq B$
         
         Then $b\subseteq B$, $y\in B$
-
     \end{proof}
 
     \begin{theorem}
-
         $\forall A, \bigcup \mathscr{P}(A) = A$
-
     \end{theorem}
     
     \begin{proof}
-        
         By def $\mathscr{P}(A) = \{x \mid x \subseteq A\}$
 
         $\bigcup \mathscr{P}(A) = \{y\mid (\exists b \in \mathscr{P}(A))y\in b\}$
@@ -265,9 +234,38 @@
         Then $\bigcup \mathscr{P}(A) \subseteq A$ By Theorem 7
 
         Thus $\forall A, \bigcup \mathscr{P}(A) = A$
+    \end{proof}
 
+    \begin{theorem}
+        $\forall A \forall B, \mathscr{P}(A) \cap \mathscr{P}(B) = \mathscr{P}(A \cap B)$
+    \end{theorem}
 
+    \begin{proof}
+        By def $A \cap B = \{x\mid x\in A \wedge x \in B\}$
 
+        $\mathscr{P}(A) = \{x \mid x \subseteq A\}$
+
+        $\mathscr{P}(A) \cap \mathscr{P}(B) = \{x\mid x\in \mathscr{P}(A) \wedge x \in \mathscr{P}(B) \}$
+
+        $\mathscr{P}(A \cap B) = \{x\mid x \subseteq A \cap B\}$
+
+        $(\subseteq)$ $\forall x \in \mathscr{P}(A) \cap \mathscr{P}(B), x \subseteq A \wedge x \subseteq B$ 
+
+        Then $x\subseteq A \cap B$
+
+        Then $\mathscr{P}(A) \cap \mathscr{P}(B) \subseteq \mathscr{P}(A \cap B)$
+
+        $(\supseteq)$ $\forall x \in \mathscr{P}(A \cap B), x \subseteq A \cap B$
+
+        $x\subseteq A \wedge x \subseteq B$
+
+        $x\in \mathscr{P}(A) \wedge x \in \mathscr{P}(B)$
+
+        $x \in \mathscr{P}(A) \cap \mathscr{P}(B)$
+
+        Then $\mathscr{P}(A) \cap \mathscr{P}(B) \supseteq \mathscr{P}(A \cap B)$
+
+        Thus $\mathscr{P}(A) \cap \mathscr{P}(B) = \mathscr{P}(A \cap B)$
     \end{proof}
 
     \begin{axiom}
