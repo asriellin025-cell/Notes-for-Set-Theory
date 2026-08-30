@@ -92,7 +92,7 @@
     \end{proof}
 
     \begin{remark}
-        I guess we can use mathematical induction to make it to $\forall \alpha \in \mathbb{N}$
+        we can use mathematical induction to make it to $\forall \alpha \in \mathbb{N}$
     \end{remark}
 
     \begin{remark}
@@ -131,6 +131,16 @@
 
     \begin{axiom}
         Union Axiom
+        $$\forall A \exists B \forall x(x \in B \iff (\exists b \in A)x\in b)$$
+        \begin{remark}
+            Compare with $\forall A \forall B \exists C \forall x(x\in C \iff x\in A \vee x\in B)$,
+
+            Which mentioned in previous page of the book (Page 18), named Preliminary Form. 
+            Preliminary Form build union as a binary operator, similar to the Pairing Axiom.
+            While the problem of Preliminary Form is can not tackle infinity sets 
+            (you have to nest the union operation infinity many times to do that, which is illegal.
+             A Well-Formed Formula in First-Order Classical Logic should have finite length)
+        \end{remark}
     \end{axiom}
 
     \begin{axiom}
