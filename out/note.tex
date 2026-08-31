@@ -268,6 +268,49 @@
         Thus $\mathscr{P}(A) \cap \mathscr{P}(B) = \mathscr{P}(A \cap B)$
     \end{proof}
 
+    \begin{theorem}
+        $\mathscr{P}(A) \cup  \mathscr{P}(B) \subseteq \mathscr{P}(A \cup B)$
+    \end{theorem}
+
+    \begin{proof}
+        $\mathscr{P}(A \cup B) = \{x\mid x \subseteq A \cup B\}$
+
+        $\forall x \in \mathscr{P}(A) \cup  \mathscr{P}(B), x  \in \mathscr{P}(A) \vee x \in \mathscr{P}(B)$
+
+        Then $x \subseteq A \vee x \subseteq B$
+
+        Then $x \subseteq A \cup B$
+        \begin{remark}
+            $x \subseteq A \vee x \subseteq B \implies x \subseteq A \cup B$ is not a iff statement
+        \end{remark}
+    \end{proof}
+        
+    \begin{theorem}
+        $\neg \exists A \forall x, \{x\} \in A $
+    \end{theorem}
+
+    \begin{proof}
+        Assume A exists as set $A = \{\{x\} \mid x \}$
+        
+        By Union Axiom $\bigcup A$ is a set, $\bigcup A = \{y \mid (\exists b \in A)y\in b\}$
+
+        Then $\bigcup A = \{x\mid x\}$
+
+        Which is a proper class rather than set By Theorem 2A on page 22
+    \end{proof}
+
+    \begin{theorem}
+        $A \in B \implies \mathscr{P}(A) \in \mathscr{P}(\mathscr{P}(\bigcup B))$
+    \end{theorem}
+        
+    \begin{proof}
+        $A \in B \implies A \subseteq \bigcup B$ By Theorem 5
+
+        $\implies \mathscr{P}(A) \subseteq \mathscr{P}(\bigcup B)$ By Theorem 1
+
+        Thus $\mathscr{P}(A) \in \mathscr{P}(\mathscr{P}(\bigcup B))$ By def of $\mathscr{P}(A)$
+    \end{proof}
+
     \begin{axiom}
         Replacement Axiom
     \end{axiom}
