@@ -359,9 +359,25 @@
         $= A$
     \end{proof}
 
+    \begin{remark}
+        $A \times B = \{\{\{a\}, \{a ,b\}\} \mid a \in A \wedge b \in B\}$
+    \end{remark}
+    
     \begin{theorem}
-        $$
+        $A \times (B \cup C) = (A \times B) \cup (A \times C)$
     \end{theorem}
+
+    \begin{proof}
+        $A \times (B \cup C) = \{\{\{a\}, \{a ,b\}\} \mid a \in A \wedge b \in B \cup C\}$ By def
+
+        $= \{\{\{a\}, \{a ,b\}\} \mid a \in A \wedge (b \in B \vee b \in C)\}$
+
+        $= \{\{\{a\}, \{a ,b\}\} \mid (a \in A \wedge b \in B) \vee (a \in A \wedge b \in C)\}$
+
+        $= \{\{\{a\}, \{a ,b\}\} \mid a \in A \wedge b \in B \}  \cup \{\{\{a\}, \{a ,b\}\} \mid a \in A \wedge b \in C\}$
+
+        $= (A \times B) \cup (A \times C)$ By def
+    \end{proof}
 
     \begin{axiom}
         Replacement Axiom
