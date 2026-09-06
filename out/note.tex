@@ -114,7 +114,7 @@
     \end{remark}
 
     \begin{remark}
-        $\forall x (x\in B \iff \phi(x))  \iff B = \{x\mid \phi(x)\}$
+        $\forall x (x\in B \iff x \in A \wedge \phi(x))  \iff B = \{x\in A \mid \phi(x)\}$
     \end{remark}
 
     \begin{axiom}
@@ -167,6 +167,10 @@
             $P(x)$ (predicate) includes $\phi(x)$ (open formula) and $\sigma$ (closed formula).
         \end{remark}
     \end{axiom}
+
+    \begin{remark}
+        $\bigcup A = \{x\mid (\exists b\in A) x\in b\}$
+    \end{remark}
       
     \begin{theorem}
         $x\in A \implies x \subseteq \bigcup A$
@@ -377,6 +381,18 @@
         $= \{\{\{a\}, \{a ,b\}\} \mid a \in A \wedge b \in B \}  \cup \{\{\{a\}, \{a ,b\}\} \mid a \in A \wedge b \in C\}$
 
         $= (A \times B) \cup (A \times C)$ By def
+    \end{proof}
+
+    \begin{remark}
+        Pure shifting for the formula in class-builder is not friendly to human, which is hard to deduce and read
+    \end{remark}
+
+    \begin{theorem}
+        $A \times \bigcup B = \bigcup\{A \times x \mid x \in B\}$
+    \end{theorem} 
+
+    \begin{proof}
+        
     \end{proof}
 
     \begin{axiom}
